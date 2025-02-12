@@ -1,11 +1,21 @@
 import random
 
 print("1 - 2 = Jab – Cross ,3 - 4 = Lead Hook – Rear Hook ,5 - 6 = Lead Uppercut – Rear Uppercut")
-opponent_move = int(input("enter a number representing a boxing move from 1 to 6: "))
-while opponent_move not in range(1,7):
-    print("there is no move with this number try again")
-    opponent_move = int(input("enter a number representing a boxing move from 1 to 6: "))
-
+while True:
+    try:
+        opponent_move = int(input("enter a number representing a boxing move from 1 to 6: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+while type(opponent_move) != int or opponent_move not in range(1,7):
+    print("illegal move try again")
+    while True:
+        try:
+            opponent_move = int(input("enter a number representing a boxing move from 1 to 6: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+opponent_move = int(opponent_move)
 my_move = random.randrange(1,5)
 result = True
 if opponent_move in [3,4]:
