@@ -7,6 +7,7 @@ while True:
         break
     except ValueError:
         print("Invalid input. Please enter a valid integer.")
+
 while type(opponent_move) != int or opponent_move not in range(1,7):
     print("illegal move try again")
     while True:
